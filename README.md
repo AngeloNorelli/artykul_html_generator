@@ -13,7 +13,9 @@ Aplikacja tworzy dwa pliki:
 artykul_html_generator/
 │
 ├── src/               # Katalog na kod źródłowy
-│   └── main.py        # Główny plik aplikacji
+│   ├── main.py        # Główny plik aplikacji
+│   ├── szablon.html   # Szablon HTML do podglądu artykułu z CSS i JavaScript
+│   └── podglad.html   # Plik podglądu artykułu
 │
 ├── data/              # Katalog na pliki z artykułami
 │   └── artykul.txt    # Przykładowy plik z artykułem
@@ -21,8 +23,6 @@ artykul_html_generator/
 ├── output/            # Katalog na wygenerowane pliki HTML
 │   └── artykul.html   # Wygenerowany kod HTML (po uruchomieniu aplikacji)
 │
-├── szablon.html       # Szablon HTML do podglądu artykułu z CSS i JavaScript
-├── podglad.html       # Plik podglądu artykułu
 ├── .env               # Plik z kluczem API (należy dodać przed uruchomieniem)
 ├── .gitignore         # Ignorowanie pliku `.env
 └── README.md          # Ten właśnie plik
