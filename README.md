@@ -35,28 +35,28 @@ artykul_html_generator/
 
 ## Instalacja
 1. Sklonuj repozytorium:
-```bash
-git clone https://github.com/AngeloNorelli/artykul_html_generator
-cd artykul_html_generator
-```
+    ```bash
+    git clone https://github.com/AngeloNorelli/artykul_html_generator
+    cd artykul_html_generator
+    ```
 
 2. Zainstaluj wymagane biblioteki:
-```bash
-pip install openai
-```
+    ```bash
+    pip install openai
+    ```
 
 3. Utwórz plik `.env` w katalogu głównym projektu i dodaj do niego klucz API OpenAI:
-```plaintext
-OPENAI_API_KEY=twoj_klucz_api
-```
+    ```plaintext
+    OPENAI_API_KEY=twoj_klucz_api
+    ```
 
 ## Instrukcja uruchomienia
 1. Umieść plik artykułu w katalogu `data/`, np. `artykul.txt`. Upewnij się, że tekst artykułu jest czytelny i odpowiednio sformatowany.
 
 2. Uruchom główny skrypt aplikacji:
-```bash
-python src/main.py
-```
+    ```bash
+    python src/main.py
+    ```
 
 3. Sprawdź wygenerowany plik HTML – artykul.html zostanie zapisany w katalogu output/.
 
