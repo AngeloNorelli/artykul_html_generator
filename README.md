@@ -36,7 +36,7 @@ artykul_html_generator/
 ## Instalacja
 1. Sklonuj repozytorium:
 ```bash
-git clone https://github.com/twoje-repozytorium/artykul_html_generator.git
+git clone https://github.com/AngeloNorelli/artykul_html_generator
 cd artykul_html_generator
 ```
 
