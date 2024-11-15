@@ -1,27 +1,26 @@
 # Generator Artykułów HTML
 ## Opis projektu
-Aplikacja generuje plik HTML na podstawie treści artykułu dostarczonego w formie pliku tekstowego. Program łączy się z OpenAI API, aby przetworzyć treść artykułu i wygenerować kod HTML zgodnie ze zdefiniowanymi wytycznymi. Generowany kod HTML zawiera samą sekcję `<body>` nagłówki, paragrafy i obrazy z naprzemiennym wyrównaniem (lewo-prawo), zamknięte w kontenerach `<div>`, co ułatwia stylizację.
+Aplikacja generuje pliki HTML na podstawie treści artykułu dostarczonego w formie pliku tekstowego, korzystając z OpenAI API.
+Projekt zawiera trzy główne pliki wyjściowe:
 
-Aplikacja tworzy dwa pliki:
-
-1. `artykul.html` – HTML wygenerowany z treści artykułu.
-2. `podglad.html` – plik do wizualizacji wygenerowanego artykułu na podstawie 
-`szablon.html`, który zawiera style i skrypty JavaScript.
+1. `artykul.html` – HTML wygenerowany z treści artykułu, z poprawnie sformatowanymi nagłówkami, paragrafami i miejscami na obrazy.
+2. `szablon.html` – szablon HTML wygenerowany na podstawie `artykul.html`, gotowy do osadzenia artykułu.
+3. `podglad.html` - podglad na otrzymanu kod, połączony `szablon.html` z `artykul.html`.
 
 ## Struktura projektu
 ```bash
 artykul_html_generator/
 │
 ├── src/               # Katalog na kod źródłowy
-│   ├── main.py        # Główny plik aplikacji
-│   ├── szablon.html   # Szablon HTML do podglądu artykułu z CSS i JavaScript
-│   └── podglad.html   # Plik podglądu artykułu
+│   └── main.py        # Główny plik aplikacji
 │
 ├── data/              # Katalog na pliki z artykułami
 │   └── artykul.txt    # Przykładowy plik z artykułem
 │
 ├── output/            # Katalog na wygenerowane pliki HTML
-│   └── artykul.html   # Wygenerowany kod HTML (po uruchomieniu aplikacji)
+│   ├── artykul.html   # Wygenerowany kod HTML artykułu
+│   ├── szablon.html   # Szablon HTML do podglądu artykułu z CSS i JavaScript
+│   └── podglad.html   # Plik podglądu artykułu
 │
 ├── .env               # Plik z kluczem API (należy dodać przed uruchomieniem)
 ├── .gitignore         # Ignorowanie pliku `.env
@@ -29,7 +28,7 @@ artykul_html_generator/
 ```
 
 ## Wymagania
-* Python 3.x
+* Python 3.7+
 * Konto OpenAI z kluczem API
 * Biblioteka openai (do zainstalowania przez pip)
 
@@ -52,16 +51,14 @@ artykul_html_generator/
 
 ## Instrukcja uruchomienia
 1. Umieść plik artykułu w katalogu `data/`, np. `artykul.txt`. Upewnij się, że tekst artykułu jest czytelny i odpowiednio sformatowany.
+   * Sprawdź, czy nazwa pliku zgadza się z nazwą w pliku `main.py` (na szczycie kodu jest zmienna zawierajacą ścieżkę do artykułu `ARTICLE_PATH`).
 
 2. Uruchom główny skrypt aplikacji:
     ```bash
     python src/main.py
     ```
 
-3. Sprawdź wygenerowany plik HTML – artykul.html zostanie zapisany w katalogu output/.
+3. Sprawdź wygenerowane pliki HTML – `artykul.html` oraz `szablon.html` i `podglad.html` zostaną zapisane w katalogu output/.
 
 4. Podgląd artykułu:
-   * Aby zobaczyć podgląd wygenerowanego artykułu, otwórz plik skopiuj zawartość pliku `artykul.html`. 
-   * Wklej jego zawartość do sekcji `<body>` pliku `podglad.html`.
-   * Otwórz plik `podglad.html` w przeglądarce
-   * Plik ten korzysta z szablonu `szablon.html`, który zawiera style CSS i JavaScript do wyświetlania obrazków naprzemiennie po lewej i prawej stronie paragrafów.
+   * Aby zobaczyć podgląd wygenerowanego artykułu, otwórz plik `podglad.html`.
