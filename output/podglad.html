@@ -1,3 +1,55 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 40px;
+        }
+        section {
+            display: flex;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        p {
+            flex: 1;
+            margin-right: 20px;
+            color: #666;
+        }
+        figure {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        figcaption {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach((section, index) => {
+                section.style.flexDirection = (index % 2 === 0) ? "row-reverse" : "row";
+            });
+        });
+    </script>
+</head>
+<body>
 <body>
 <h1>Sztuczna inteligencja: wpływ i wyzwania</h1>
 
@@ -62,4 +114,5 @@
 </section>
 
 <p>*Tekst opracowany przez AI. W Oxido nie mamy aż tak cukierkowego spojrzenia na sztuczną inteligencję... ;)</p>
-</body>
+</body></body>
+</html>
